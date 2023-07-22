@@ -1,13 +1,12 @@
-import React from "react";
 import { Input, Button } from "antd";
+import { useState } from "react";
 
 export default function Search({ onSearch }) {
-  const [latitude, setLatitude] = React.useState("");
-  const [longitude, setLongitude] = React.useState("");
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
   const handleSearch = () => {
     if (latitude && longitude) {
-      // Convert latitude and longitude to numbers before passing them to the parent component
       onSearch({
         lat: Number(latitude),
         long: Number(longitude),
